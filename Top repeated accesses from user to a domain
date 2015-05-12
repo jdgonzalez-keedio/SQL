@@ -1,0 +1,6 @@
+SELECT user_proxy, domain_proxy, count(*) AS mycount 
+FROM proxyUserDomain 
+WHERE user_proxy <> '-' AND user_proxy <> 'null' AND domain_proxy <> '-' AND domain_proxy <> 'null' 
+GROUP BY user_proxy, domain_proxy 
+ORDER BY mycount DESC 
+LIMIT 10;
